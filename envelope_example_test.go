@@ -5,7 +5,7 @@ import (
 	"fmt"
 	"log"
 
-	"github.com/way-platform/soap-go"
+	"github.com/tnymlr/soap-go"
 )
 
 // ExampleEnvelope_basic demonstrates creating a basic SOAP envelope with just a body.

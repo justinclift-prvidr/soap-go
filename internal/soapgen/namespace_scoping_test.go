@@ -4,7 +4,7 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/way-platform/soap-go/xsd"
+	"github.com/tnymlr/soap-go/xsd"
 )
 
 func TestNsPrefixedName(t *testing.T) {

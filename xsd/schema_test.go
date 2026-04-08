@@ -5,7 +5,7 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/way-platform/soap-go/xsd"
+	"github.com/tnymlr/soap-go/xsd"
 )
 
 func TestParseSoapEnvelope(t *testing.T) {

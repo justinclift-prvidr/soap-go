@@ -4,8 +4,8 @@ import (
 	"fmt"
 	"strings"
 
-	"github.com/way-platform/soap-go/internal/codegen"
-	"github.com/way-platform/soap-go/wsdl"
+	"github.com/tnymlr/soap-go/internal/codegen"
+	"github.com/tnymlr/soap-go/wsdl"
 )
 
 // generateClientFile generates a Go file with SOAP client implementation
@@ -35,7 +35,7 @@ func (g *Generator) generateClientFile(packageName, filename string) (*codegen.F
 	file := codegen.NewFile(filename, packageName)
 
 	// Set custom package name for soap-go to use "soap" instead of "soapgo"
-	file.SetPackageName("github.com/way-platform/soap-go", "soap")
+	file.SetPackageName("github.com/tnymlr/soap-go", "soap")
 
 	// Add package declaration
 	file.P("package ", packageName)

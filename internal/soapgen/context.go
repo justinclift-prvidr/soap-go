@@ -6,7 +6,7 @@ import (
 	"sort"
 	"strings"
 
-	"github.com/way-platform/soap-go/xsd"
+	"github.com/tnymlr/soap-go/xsd"
 )
 
 // SchemaContext provides context for resolving references within a schema

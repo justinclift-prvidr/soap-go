@@ -3,7 +3,7 @@ package numbered_suffix_collisions
 import (
 	"context"
 	"fmt"
-	soap "github.com/way-platform/soap-go"
+	soap "github.com/tnymlr/soap-go"
 )
 
 // ClientOption configures a Client.

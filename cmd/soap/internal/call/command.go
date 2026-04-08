@@ -8,7 +8,7 @@ import (
 	"os"
 
 	"github.com/spf13/cobra"
-	"github.com/way-platform/soap-go"
+	"github.com/tnymlr/soap-go"
 )
 
 // NewCommand creates a new [cobra.Command] for the call command.

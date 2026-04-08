@@ -6,7 +6,7 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/way-platform/soap-go/wsdl"
+	"github.com/tnymlr/soap-go/wsdl"
 )
 
 // TestDocumentationValidation tests that generated documentation contains expected content

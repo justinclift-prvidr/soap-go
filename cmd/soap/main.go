@@ -8,9 +8,9 @@ import (
 	"charm.land/fang/v2"
 	"charm.land/lipgloss/v2"
 	"github.com/spf13/cobra"
-	"github.com/way-platform/soap-go/cmd/soap/internal/call"
-	"github.com/way-platform/soap-go/cmd/soap/internal/doc"
-	"github.com/way-platform/soap-go/cmd/soap/internal/gen"
+	"github.com/tnymlr/soap-go/cmd/soap/internal/call"
+	"github.com/tnymlr/soap-go/cmd/soap/internal/doc"
+	"github.com/tnymlr/soap-go/cmd/soap/internal/gen"
 )
 
 func main() {

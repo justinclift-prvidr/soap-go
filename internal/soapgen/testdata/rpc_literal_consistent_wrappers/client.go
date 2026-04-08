@@ -4,7 +4,7 @@ import (
 	"context"
 	"encoding/xml"
 	"fmt"
-	soap "github.com/way-platform/soap-go"
+	soap "github.com/tnymlr/soap-go"
 )
 
 // ClientOption configures a Client.

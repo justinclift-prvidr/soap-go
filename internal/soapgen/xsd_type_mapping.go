@@ -3,7 +3,7 @@ package soapgen
 import (
 	"strings"
 
-	"github.com/way-platform/soap-go/xsd"
+	"github.com/tnymlr/soap-go/xsd"
 )
 
 // mapXSDTypeToGo maps XSD types to Go types.

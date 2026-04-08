@@ -4,7 +4,7 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/way-platform/soap-go/internal/codegen"
+	"github.com/tnymlr/soap-go/internal/codegen"
 )
 
 func TestNewFile(t *testing.T) {

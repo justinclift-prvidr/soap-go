@@ -4,7 +4,7 @@ import (
 	"strings"
 	"unicode"
 
-	"github.com/way-platform/soap-go/xsd"
+	"github.com/tnymlr/soap-go/xsd"
 )
 
 // toGoName converts an XML name to a valid Go identifier (PascalCase).

@@ -11,7 +11,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/tnymlr/soap-go/wsdl"
+	"github.com/justinclift-prvidr/soap-go/wsdl"
 )
 
 // TestParsingWithGeneratedTypes tests XML parsing using types generated from testdata

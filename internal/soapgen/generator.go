@@ -3,16 +3,16 @@ package soapgen
 import (
 	"fmt"
 
-	"github.com/tnymlr/soap-go/internal/codegen"
-	"github.com/tnymlr/soap-go/wsdl"
-	"github.com/tnymlr/soap-go/xsd"
+	"github.com/justinclift-prvidr/soap-go/internal/codegen"
+	"github.com/justinclift-prvidr/soap-go/wsdl"
+	"github.com/justinclift-prvidr/soap-go/xsd"
 )
 
 // Config holds configuration for code generation
 type Config struct {
 	PackageName       string
 	GenerateClient    bool              // Whether to generate SOAP client code
-	NamespacePrefixes map[string]string  // Namespace URI → short prefix for type names
+	NamespacePrefixes map[string]string // Namespace URI → short prefix for type names
 }
 
 // Generator generates Go code from WSDL definitions
@@ -101,7 +101,7 @@ func (g *Generator) generateTypesFile(schema *xsd.Schema, packageName, filename 
 	file := codegen.NewFile(filename, packageName)
 
 	// Set custom package name for soap-go to use "soap" instead of "soapgo"
-	file.SetPackageName("github.com/tnymlr/soap-go", "soap")
+	file.SetPackageName("github.com/justinclift-prvidr/soap-go", "soap")
 
 	// Create schema context for reference resolution
 	ctx := newSchemaContext(schema, g)

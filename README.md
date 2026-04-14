@@ -55,10 +55,10 @@ $ soap
 ### Installing
 
 ```bash
-go install github.com/way-platform/soap-go/cmd/soap@latest
+go install github.com/tnymlr/soap-go/cmd/soap@latest
 ```
 
-Prebuilt binaries for Linux, Windows, and Mac are available from the [Releases](https://github.com/way-platform/soap-go/releases).
+Prebuilt binaries for Linux, Windows, and Mac are available from the [Releases](https://github.com/tnymlr/soap-go/releases).
 
 ## License
 

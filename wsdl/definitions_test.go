@@ -6,8 +6,8 @@ import (
 	"testing"
 
 	"github.com/google/go-cmp/cmp"
-	"github.com/tnymlr/soap-go/wsdl"
-	"github.com/tnymlr/soap-go/xsd"
+	"github.com/justinclift-prvidr/soap-go/wsdl"
+	"github.com/justinclift-prvidr/soap-go/xsd"
 )
 
 func TestUnmarshalGlobalWeather(t *testing.T) {

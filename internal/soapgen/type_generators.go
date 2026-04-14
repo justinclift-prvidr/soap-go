@@ -4,8 +4,8 @@ import (
 	"sort"
 	"strings"
 
-	"github.com/tnymlr/soap-go/internal/codegen"
-	"github.com/tnymlr/soap-go/xsd"
+	"github.com/justinclift-prvidr/soap-go/internal/codegen"
+	"github.com/justinclift-prvidr/soap-go/xsd"
 )
 
 // generateSimpleTypeConstants generates Go constants for simple types (mainly enumerations)

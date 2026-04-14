@@ -3,7 +3,7 @@ package xsd_test
 import (
 	"testing"
 
-	"github.com/tnymlr/soap-go/xsd"
+	"github.com/justinclift-prvidr/soap-go/xsd"
 )
 
 func TestType_IsPrimitive(t *testing.T) {

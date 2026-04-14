@@ -4,7 +4,7 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/tnymlr/soap-go/xsd"
+	"github.com/justinclift-prvidr/soap-go/xsd"
 )
 
 func TestNsPrefixedName(t *testing.T) {
@@ -24,8 +24,8 @@ func TestNsPrefixedName(t *testing.T) {
 	}{
 		{"http://example.com/core/v1", "FlexAttr", "Core_FlexAttr"},
 		{"http://example.com/billing/v1", "Invoice", "CB_Invoice"},
-		{"http://example.com/unknown/v1", "Foo", "Foo"},   // unmapped namespace
-		{"", "Bar", "Bar"},                                  // empty namespace
+		{"http://example.com/unknown/v1", "Foo", "Foo"}, // unmapped namespace
+		{"", "Bar", "Bar"}, // empty namespace
 	}
 
 	for _, tt := range tests {

@@ -10,7 +10,7 @@ import (
 	"testing"
 
 	"github.com/google/go-cmp/cmp"
-	"github.com/tnymlr/soap-go/wsdl"
+	"github.com/justinclift-prvidr/soap-go/wsdl"
 )
 
 var update = flag.Bool("update", false, "update golden files")

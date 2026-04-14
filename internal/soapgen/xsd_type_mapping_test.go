@@ -3,7 +3,7 @@ package soapgen
 import (
 	"testing"
 
-	"github.com/tnymlr/soap-go/xsd"
+	"github.com/justinclift-prvidr/soap-go/xsd"
 )
 
 func TestMapXSDTypeToGo(t *testing.T) {

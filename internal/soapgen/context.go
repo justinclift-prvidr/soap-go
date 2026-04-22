@@ -534,11 +534,10 @@ func categorizeElements(elements []xsd.Element) ([]*xsd.Element, []*xsd.Element)
 			} else {
 				dataTypes = append(dataTypes, elem)
 			}
-		} else if elem.Type != "" {
-			// Elements with simple types should also be processed as data types
-			dataTypes = append(dataTypes, elem)
-		} else if elem.SimpleType != nil {
-			// Elements with inline simple types should also be processed as data types
+		} else {
+			// Elements with Type, SimpleType, or no type at all (implicit
+			// xs:anyType) are data types. Untyped elements still need wrapper
+			// structs so references from other types compile.
 			dataTypes = append(dataTypes, elem)
 		}
 	}

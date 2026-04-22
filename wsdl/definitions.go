@@ -2,6 +2,7 @@ package wsdl
 
 import (
 	"encoding/xml"
+	"fmt"
 	"os"
 
 	"github.com/tnymlr/soap-go/xsd"
@@ -18,6 +19,15 @@ func ParseFromFile(filename string) (*Definitions, error) {
 	if err := xml.Unmarshal(data, &defs); err != nil {
 		return nil, err
 	}
+
+	if defs.Types != nil {
+		for i := range defs.Types.Schemas {
+			if err := defs.Types.Schemas[i].ResolveIncludes(filename); err != nil {
+				return nil, fmt.Errorf("resolve xs:include: %w", err)
+			}
+		}
+	}
+
 	return &defs, nil
 }
 

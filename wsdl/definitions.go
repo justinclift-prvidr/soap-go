@@ -5,7 +5,7 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/tnymlr/soap-go/xsd"
+	"github.com/justinclift-prvidr/soap-go/xsd"
 )
 
 // ParseFromFile reads a WSDL file from disk and unmarshals it.

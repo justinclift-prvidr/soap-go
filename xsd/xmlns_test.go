@@ -4,7 +4,7 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/tnymlr/soap-go/xsd"
+	"github.com/justinclift-prvidr/soap-go/xsd"
 )
 
 func TestSchemaNamespacePrefixMap(t *testing.T) {

@@ -3,8 +3,8 @@ package soapgen
 import (
 	"sort"
 
-	"github.com/tnymlr/soap-go/internal/codegen"
-	"github.com/tnymlr/soap-go/xsd"
+	"github.com/justinclift-prvidr/soap-go/internal/codegen"
+	"github.com/justinclift-prvidr/soap-go/xsd"
 )
 
 // generateInlineComplexTypes generates structs for all inline complex types found in elements and named complex types

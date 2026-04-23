@@ -7,7 +7,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/tnymlr/soap-go/wsdl"
+	"github.com/justinclift-prvidr/soap-go/wsdl"
 )
 
 // TestIntegrationWithKnownTypes tests parsing with specific known generated types

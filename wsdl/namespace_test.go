@@ -4,7 +4,7 @@ import (
 	"encoding/xml"
 	"testing"
 
-	"github.com/tnymlr/soap-go/wsdl"
+	"github.com/justinclift-prvidr/soap-go/wsdl"
 )
 
 func TestDefinitions_NamespacePrefixMap(t *testing.T) {

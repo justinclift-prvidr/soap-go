@@ -11,9 +11,9 @@ import (
 	tea "github.com/charmbracelet/bubbletea"
 	"github.com/charmbracelet/glamour"
 	"github.com/charmbracelet/lipgloss"
+	"github.com/justinclift-prvidr/soap-go/internal/docgen"
+	"github.com/justinclift-prvidr/soap-go/wsdl"
 	"github.com/spf13/cobra"
-	"github.com/tnymlr/soap-go/internal/docgen"
-	"github.com/tnymlr/soap-go/wsdl"
 )
 
 // NewCommand creates a new [cobra.Command] for the doc command.

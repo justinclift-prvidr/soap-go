@@ -221,6 +221,27 @@ func WithHeaderContent(v any) EnvelopeOption {
 	}
 }
 
+// UnmarshalHeaderEntry decodes a HeaderEntry back into a typed value — the
+// response-side counterpart of WithHeaderContent. It marshals the entry
+// (preserving the entry's element name, attributes and inner XML) and
+// unmarshals the resulting element into dest.
+//
+// dest must be a non-nil pointer to a struct whose xml:"..." tag on its
+// XMLName field matches the entry's element name and namespace; otherwise
+// encoding/xml will return an UnmarshalError. Fields on the entry that dest
+// does not declare are silently ignored, matching encoding/xml's usual
+// relaxed behaviour.
+func UnmarshalHeaderEntry(entry HeaderEntry, dest any) error {
+	data, err := xml.Marshal(entry)
+	if err != nil {
+		return fmt.Errorf("soap: marshal header entry: %w", err)
+	}
+	if err := xml.Unmarshal(data, dest); err != nil {
+		return fmt.Errorf("soap: unmarshal header entry: %w", err)
+	}
+	return nil
+}
+
 // headerEntryFromValue converts an arbitrary value into a HeaderEntry. If v
 // is itself a HeaderEntry (or *HeaderEntry), it is returned verbatim. Any
 // other value is marshalled to XML and its root element is split into name

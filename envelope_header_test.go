@@ -34,7 +34,7 @@ func TestWithHeaderContent_typedValue(t *testing.T) {
 	envelope, err := NewEnvelope(
 		WithHeaderContent(&testHeader{
 			ContextID:     "ctx-1",
-			DealerID:      "ZZ999",
+			DealerID:      "TEST-DEALER-1",
 			BillingOption: "postpaid",
 		}),
 		WithBody(&testBody{Field: "value"}),
@@ -49,7 +49,7 @@ func TestWithHeaderContent_typedValue(t *testing.T) {
 	want := strings.Join([]string{
 		`<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">`,
 		`  <soapenv:Header>`,
-		`    <MyHeader xmlns="http://example.com/ns"><ContextID>ctx-1</ContextID><DealerID>ZZ999</DealerID><BillingOption>postpaid</BillingOption></MyHeader>`,
+		`    <MyHeader xmlns="http://example.com/ns"><ContextID>ctx-1</ContextID><DealerID>TEST-DEALER-1</DealerID><BillingOption>postpaid</BillingOption></MyHeader>`,
 		`  </soapenv:Header>`,
 		`  <soapenv:Body><MyRequest xmlns="http://example.com/ns"><Field>value</Field></MyRequest></soapenv:Body>`,
 		`</soapenv:Envelope>`,
@@ -241,6 +241,88 @@ func TestWithHeader_customXMLNamePreserved(t *testing.T) {
 	if envelope.Header.XMLName.Local != "SOAP-ENV:Header" {
 		t.Errorf("caller's XMLName not preserved: got %q",
 			envelope.Header.XMLName.Local)
+	}
+}
+
+func TestUnmarshalHeaderEntry_roundTripThroughTypedStruct(t *testing.T) {
+	t.Parallel()
+	// Build an envelope using WithHeaderContent, pull the HeaderEntry back
+	// out and decode it into a fresh struct. The two values should match.
+	original := &testHeader{
+		ContextID:     "ctx-42",
+		DealerID:      "TEST-DEALER-A",
+		BillingOption: "prepaid",
+	}
+	env, err := NewEnvelope(WithHeaderContent(original))
+	if err != nil {
+		t.Fatalf("NewEnvelope: %v", err)
+	}
+	if env.Header == nil || len(env.Header.Entries) != 1 {
+		t.Fatalf("expected one header entry, got %+v", env.Header)
+	}
+
+	var decoded testHeader
+	if err := UnmarshalHeaderEntry(env.Header.Entries[0], &decoded); err != nil {
+		t.Fatalf("UnmarshalHeaderEntry: %v", err)
+	}
+	// encoding/xml populates XMLName on decode from the actual element
+	// name; the source struct left it zero-valued (it came from the tag at
+	// encode time). Compare only the scalar fields that round-trip through
+	// content.
+	if decoded.ContextID != original.ContextID ||
+		decoded.DealerID != original.DealerID ||
+		decoded.BillingOption != original.BillingOption {
+		t.Errorf("round-trip mismatch: got %+v, want %+v", decoded, *original)
+	}
+}
+
+func TestUnmarshalHeaderEntry_preservesNestedContent(t *testing.T) {
+	t.Parallel()
+	// A header entry built from raw innerxml that holds a nested element
+	// with its own namespace declaration must still decode cleanly.
+	entry := HeaderEntry{
+		XMLName: xml.Name{Space: "http://example.com/ns", Local: "MyHeader"},
+		Content: []byte(`<ContextID>ctx-1</ContextID><DealerID>TEST-DEALER-B</DealerID><BillingOption>postpaid</BillingOption>`),
+	}
+	var got testHeader
+	if err := UnmarshalHeaderEntry(entry, &got); err != nil {
+		t.Fatalf("UnmarshalHeaderEntry: %v", err)
+	}
+	if got.ContextID != "ctx-1" || got.DealerID != "TEST-DEALER-B" || got.BillingOption != "postpaid" {
+		t.Errorf("decoded value mismatch: got %+v", got)
+	}
+}
+
+func TestUnmarshalHeaderEntry_nonPointerDestErrors(t *testing.T) {
+	t.Parallel()
+	entry := HeaderEntry{
+		XMLName: xml.Name{Space: "http://example.com/ns", Local: "MyHeader"},
+	}
+	var dest testHeader
+	err := UnmarshalHeaderEntry(entry, dest) // pass by value, not pointer
+	if err == nil {
+		t.Fatal("expected error for non-pointer dest, got nil")
+	}
+	if !strings.Contains(err.Error(), "unmarshal header entry") {
+		t.Errorf("expected wrapped unmarshal error, got %q", err.Error())
+	}
+}
+
+func TestUnmarshalHeaderEntry_mismatchedXMLNameErrors(t *testing.T) {
+	t.Parallel()
+	// Entry name does not match dest's declared XMLName — encoding/xml
+	// surfaces this as an unmarshal error.
+	entry := HeaderEntry{
+		XMLName: xml.Name{Space: "http://example.com/other", Local: "SomethingElse"},
+		Content: []byte("<ContextID>x</ContextID>"),
+	}
+	var dest testHeader
+	err := UnmarshalHeaderEntry(entry, &dest)
+	if err == nil {
+		t.Fatal("expected error for mismatched XMLName, got nil")
+	}
+	if !strings.Contains(err.Error(), "unmarshal header entry") {
+		t.Errorf("expected wrapped unmarshal error, got %q", err.Error())
 	}
 }
 

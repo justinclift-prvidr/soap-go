@@ -2,7 +2,7 @@ package simple_content_extension
 
 import (
 	"encoding/xml"
-	soap "github.com/justinclift-prvidr/soap-go"
+	soap "github.com/tnymlr/soap-go"
 )
 
 // StateElementWrapper represents the StateElement element

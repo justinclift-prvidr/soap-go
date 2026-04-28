@@ -2,7 +2,7 @@ package case_insensitive_collisions
 
 import (
 	"encoding/xml"
-	soap "github.com/justinclift-prvidr/soap-go"
+	soap "github.com/tnymlr/soap-go"
 )
 
 // Complex types

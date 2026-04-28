@@ -26,18 +26,18 @@ var (
 	IOReadAllIdent                 = GoIdent{GoImportPath: "io", GoName: "ReadAll"}
 
 	// SOAP library types
-	SOAPClientIdent               = GoIdent{GoImportPath: "github.com/justinclift-prvidr/soap-go", GoName: "Client"}
-	SOAPClientOptionIdent         = GoIdent{GoImportPath: "github.com/justinclift-prvidr/soap-go", GoName: "ClientOption"}
-	SOAPNewClientIdent            = GoIdent{GoImportPath: "github.com/justinclift-prvidr/soap-go", GoName: "NewClient"}
-	SOAPWithEndpointIdent         = GoIdent{GoImportPath: "github.com/justinclift-prvidr/soap-go", GoName: "WithEndpoint"}
-	SOAPEnvelopeIdent             = GoIdent{GoImportPath: "github.com/justinclift-prvidr/soap-go", GoName: "Envelope"}
-	SOAPBodyIdent                 = GoIdent{GoImportPath: "github.com/justinclift-prvidr/soap-go", GoName: "Body"}
-	SOAPNamespaceIdent            = GoIdent{GoImportPath: "github.com/justinclift-prvidr/soap-go", GoName: "Namespace"}
-	SOAPNewEnvelopeIdent          = GoIdent{GoImportPath: "github.com/justinclift-prvidr/soap-go", GoName: "NewEnvelope"}
-	SOAPWithBodyIdent             = GoIdent{GoImportPath: "github.com/justinclift-prvidr/soap-go", GoName: "WithBody"}
-	SOAPWithHeaderContentIdent    = GoIdent{GoImportPath: "github.com/justinclift-prvidr/soap-go", GoName: "WithHeaderContent"}
-	SOAPUnmarshalHeaderEntryIdent = GoIdent{GoImportPath: "github.com/justinclift-prvidr/soap-go", GoName: "UnmarshalHeaderEntry"}
-	SOAPXSDDateTimeIdent          = GoIdent{GoImportPath: "github.com/justinclift-prvidr/soap-go", GoName: "XSDDateTime"}
+	SOAPClientIdent               = GoIdent{GoImportPath: "github.com/tnymlr/soap-go", GoName: "Client"}
+	SOAPClientOptionIdent         = GoIdent{GoImportPath: "github.com/tnymlr/soap-go", GoName: "ClientOption"}
+	SOAPNewClientIdent            = GoIdent{GoImportPath: "github.com/tnymlr/soap-go", GoName: "NewClient"}
+	SOAPWithEndpointIdent         = GoIdent{GoImportPath: "github.com/tnymlr/soap-go", GoName: "WithEndpoint"}
+	SOAPEnvelopeIdent             = GoIdent{GoImportPath: "github.com/tnymlr/soap-go", GoName: "Envelope"}
+	SOAPBodyIdent                 = GoIdent{GoImportPath: "github.com/tnymlr/soap-go", GoName: "Body"}
+	SOAPNamespaceIdent            = GoIdent{GoImportPath: "github.com/tnymlr/soap-go", GoName: "Namespace"}
+	SOAPNewEnvelopeIdent          = GoIdent{GoImportPath: "github.com/tnymlr/soap-go", GoName: "NewEnvelope"}
+	SOAPWithBodyIdent             = GoIdent{GoImportPath: "github.com/tnymlr/soap-go", GoName: "WithBody"}
+	SOAPWithHeaderContentIdent    = GoIdent{GoImportPath: "github.com/tnymlr/soap-go", GoName: "WithHeaderContent"}
+	SOAPUnmarshalHeaderEntryIdent = GoIdent{GoImportPath: "github.com/tnymlr/soap-go", GoName: "UnmarshalHeaderEntry"}
+	SOAPXSDDateTimeIdent          = GoIdent{GoImportPath: "github.com/tnymlr/soap-go", GoName: "XSDDateTime"}
 
 	// Built-in types (no import path needed)
 	StringIdent = GoIdent{GoImportPath: "", GoName: "string"}

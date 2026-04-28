@@ -81,7 +81,7 @@ func mapXSDTypeToGo(xsdType xsd.Type) string {
 func getRequiredImports(xsdType xsd.Type) []string {
 	switch xsdType {
 	case xsd.DateTime:
-		return []string{"github.com/justinclift-prvidr/soap-go"}
+		return []string{"github.com/tnymlr/soap-go"}
 	case xsd.Time, xsd.Date:
 		return []string{"time"}
 	case xsd.QName:

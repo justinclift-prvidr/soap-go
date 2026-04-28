@@ -2,7 +2,7 @@ package comprehensive_wrapper_naming
 
 import (
 	"encoding/xml"
-	soap "github.com/justinclift-prvidr/soap-go"
+	soap "github.com/tnymlr/soap-go"
 )
 
 // LoginRequestWrapper represents the LoginRequest element

@@ -168,7 +168,7 @@ func TestXSDDateTime_Codegen(t *testing.T) {
 
 	for _, want := range []string{
 		"soap.XSDDateTime",
-		`"github.com/justinclift-prvidr/soap-go"`,
+		`"github.com/tnymlr/soap-go"`,
 	} {
 		if !strings.Contains(got, want) {
 			t.Errorf("expected %q in generated types.go, not found:\n%s", want, got)

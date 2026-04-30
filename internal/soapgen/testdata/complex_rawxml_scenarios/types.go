@@ -2,7 +2,7 @@ package complex_rawxml_scenarios
 
 import (
 	"encoding/xml"
-	soap "github.com/tnymlr/soap-go"
+	soap "github.com/justinclift-prvidr/soap-go"
 )
 
 // RawXML captures raw XML content for untyped elements.

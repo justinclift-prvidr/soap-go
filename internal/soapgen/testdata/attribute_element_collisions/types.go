@@ -2,7 +2,7 @@ package attribute_element_collisions
 
 import (
 	"encoding/xml"
-	soap "github.com/tnymlr/soap-go"
+	soap "github.com/justinclift-prvidr/soap-go"
 )
 
 // Complex types

@@ -4,7 +4,7 @@ import (
 	"encoding/xml"
 	"time"
 
-	soap "github.com/tnymlr/soap-go"
+	soap "github.com/justinclift-prvidr/soap-go"
 )
 
 // RawXML captures raw XML content for untyped elements.

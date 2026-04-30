@@ -1,4 +1,4 @@
-module github.com/tnymlr/soap-go
+module github.com/justinclift-prvidr/soap-go
 
 go 1.25.0
 

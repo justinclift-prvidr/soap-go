@@ -3,7 +3,7 @@ package attribute_element_collisions
 import (
 	"context"
 	"fmt"
-	soap "github.com/tnymlr/soap-go"
+	soap "github.com/justinclift-prvidr/soap-go"
 )
 
 // ClientOption configures a Client.

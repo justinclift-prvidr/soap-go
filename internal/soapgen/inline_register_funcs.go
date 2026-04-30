@@ -1,7 +1,7 @@
 package soapgen
 
 import (
-	"github.com/tnymlr/soap-go/xsd"
+	"github.com/justinclift-prvidr/soap-go/xsd"
 )
 
 // registerInlineTypesFromElement recursively registers inline complex types from an element without generating struct definitions

@@ -1,8 +1,8 @@
 # SOAP Go
 
-[![PkgGoDev](https://pkg.go.dev/badge/github.com/tnymlr/soap-go)](https://pkg.go.dev/github.com/tnymlr/soap-go)
-[![GoReportCard](https://goreportcard.com/badge/github.com/tnymlr/soap-go)](https://goreportcard.com/report/github.com/tnymlr/soap-go)
-[![CI](https://github.com/tnymlr/soap-go/actions/workflows/ci.yaml/badge.svg)](https://github.com/tnymlr/soap-go/actions/workflows/ci.yaml)
+[![PkgGoDev](https://pkg.go.dev/badge/github.com/justinclift-prvidr/soap-go)](https://pkg.go.dev/github.com/justinclift-prvidr/soap-go)
+[![GoReportCard](https://goreportcard.com/badge/github.com/justinclift-prvidr/soap-go)](https://goreportcard.com/report/github.com/justinclift-prvidr/soap-go)
+[![CI](https://github.com/justinclift-prvidr/soap-go/actions/workflows/ci.yaml/badge.svg)](https://github.com/justinclift-prvidr/soap-go/actions/workflows/ci.yaml)
 
 A Go SDK and CLI tool for SOAP web services.
 
@@ -63,7 +63,7 @@ $ soap
 The CLI is distributed as a Go module. Install it with the Go toolchain:
 
 ```bash
-go install github.com/tnymlr/soap-go/cmd/soap@latest
+go install github.com/justinclift-prvidr/soap-go/cmd/soap@latest
 ```
 
 The resulting `soap` binary lands in `$(go env GOBIN)` (or `$(go env GOPATH)/bin` if `GOBIN` is unset).
@@ -74,7 +74,7 @@ This SDK is published under the [MIT License](./LICENSE).
 
 ## Security
 
-Security researchers, please open a private advisory via the [Security tab](https://github.com/tnymlr/soap-go/security/advisories/new).
+Security researchers, please open a private advisory via the [Security tab](https://github.com/justinclift-prvidr/soap-go/security/advisories/new).
 
 ## Code of Conduct
 

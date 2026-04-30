@@ -5,9 +5,9 @@ import (
 	"sort"
 	"strings"
 
-	"github.com/tnymlr/soap-go/internal/codegen"
-	"github.com/tnymlr/soap-go/wsdl"
-	"github.com/tnymlr/soap-go/xsd"
+	"github.com/justinclift-prvidr/soap-go/internal/codegen"
+	"github.com/justinclift-prvidr/soap-go/wsdl"
+	"github.com/justinclift-prvidr/soap-go/xsd"
 	"golang.org/x/text/cases"
 	"golang.org/x/text/language"
 )

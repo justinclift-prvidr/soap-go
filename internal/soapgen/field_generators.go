@@ -3,8 +3,8 @@ package soapgen
 import (
 	"strings"
 
-	"github.com/tnymlr/soap-go/internal/codegen"
-	"github.com/tnymlr/soap-go/xsd"
+	"github.com/justinclift-prvidr/soap-go/internal/codegen"
+	"github.com/justinclift-prvidr/soap-go/xsd"
 )
 
 // countRawXMLFields returns the total number of struct fields that will
